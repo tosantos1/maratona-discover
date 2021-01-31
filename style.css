@@ -65,21 +65,12 @@ header {
     height: 85px;
 }
 .name-icon {
-    border: 1px solid red;
     display: flex;
-    text-align: center;
-    
-    
 }
-.perfil h1 {
-   
+.name-icon h1 {
     font-size: 1rem;
     margin-right: 1rem;
     color: white;
-}
-.icon{
-    margin: auto 0;
-    
 }
 
 /* BALANCE ==========*/
