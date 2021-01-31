@@ -28,17 +28,58 @@ h2 {
     font-weight: normal;
 }
 
+
+
+
+
 /* HEADER ==========*/
+
 
 header {
     background: #2d4a22;
     padding: 2rem 0 10rem;
-    text-align: center;
 }
 
-#logo {
-    color: #fff;
-    font-weight: 100;
+/* NAV ==========*/
+
+.nav-bar {
+    width: min(90vw, 800px);
+    margin: auto;
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.perfil {
+    
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    
+}
+.foto-perfil {
+    
+    margin-right: 1rem; 
+    width: 85px;
+    height: 85px;
+}
+.name-icon {
+    border: 1px solid red;
+    display: flex;
+    text-align: center;
+    
+    
+}
+.perfil h1 {
+   
+    font-size: 1rem;
+    margin-right: 1rem;
+    color: white;
+}
+.icon{
+    margin: auto 0;
+    
 }
 
 /* BALANCE ==========*/
