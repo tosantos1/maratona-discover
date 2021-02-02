@@ -17,12 +17,27 @@ const Modal = {
     }
 }
 
-const transactions = [{
-  id: 1,
-  description: 'Luz',
-  amount: 50000
+const transactions = [
+  {
+    id: 1,
+    description: 'Luz',
+    amount: -50000,
+    date: '23/01/2021'
+  },
+  {
+    id: 2,
+    description: 'Luz',
+    amount: 500000,
+    date: '23/01/2021'
+  },
+  {
+    id: 1,
+    description: 'Luz',
+    amount: -20000,
+    date: '23/01/2021'
+  },
 
-}]
+]
 
 // Eu preciso somar as entradas
 // Depois eu preciso somar as saídas e
@@ -49,3 +64,10 @@ const Transaction = {  // "=" Atribuindo valor
 
 
 }
+
+// Eu preciso pegar as minhas transções do meu
+// objeto aqui no Javascript
+// e colocar lá no HTML
+
+// Substituir os dados do HTML com os dados do JS
+
