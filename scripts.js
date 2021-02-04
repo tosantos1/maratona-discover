@@ -52,17 +52,41 @@ const transactions = [
 
 const Transaction = {  // "=" Atribuindo valor
     incomes(){
-      // somar as entradas
+    let income = 0;
+      // pegar todas as transacoes
+      // para cada transacao,
+    transactions.forEach(transaction => {
+      // se ela for maior que zero
+    if (transaction.amount > 0){
+      // somar a uma variavel e retornar a variavel
+    income = income + transaction.amount;
+    }
+      
+
+    })
+     return income;
 
 
     },
     expenses(){
-      // somar as saídas
+    let expense = 0;
+      // pegar todas as transacoes
+      // para cada transacao,
+    transactions.forEach(transaction => {
+      // se ela for menor que zero
+    if (transaction.amount < 0){
+      // somar a uma variavel e retornar a variavel
+    expense = expense + transaction.amount;
+    }
+      
+
+    })
+    return expense;
 
 
     },
     total(){
-      // entradas - saídas
+      return Transaction.incomes() + Transaction.expenses();
 
 
     }
@@ -79,7 +103,6 @@ const Transaction = {  // "=" Atribuindo valor
 
 const DOM = {
   transactionsContainer: document.querySelector('#data-table tbody'),
-
 
   addTransaction(transaction, index){
     const tr = document.createElement('tr') // Criando o elemento "tr" do html mesmo!
@@ -105,7 +128,22 @@ const DOM = {
      
     `
     return html
+  },
+
+  updateBalance(){
+    document
+        .getElementById('incomeDisplay')
+        .innerHTML = Utils.formatCurrency(Transaction.incomes())
+    document
+        .getElementById('expenseDisplay')
+        .innerHTML = Utils.formatCurrency(Transaction.expenses())
+    document
+        .getElementById('totalDisplay')
+        .innerHTML = Utils.formatCurrency(Transaction.total())
+
+
   }
+
 }
 
 const Utils = {
@@ -129,3 +167,5 @@ const Utils = {
 transactions.forEach(function(transaction){
   DOM.addTransaction(transaction)
 })
+
+DOM.updateBalance()
