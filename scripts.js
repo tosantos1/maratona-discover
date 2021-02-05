@@ -164,7 +164,24 @@ const Utils = {
 }
 
 const Form = {
-  
+  formatData(){
+
+  },
+  validateFields(){
+
+  },
+  submt(event){
+    event.preventDefault()
+
+    // verificar se todas as informações foram preenchidas
+    Form.validateFields()
+    // formatar os dados para salvar
+    Form.formatData()
+    // salvar 
+    // apagar os dados do formulario 
+    // modal feche
+    // atualizar a aplicação
+  }
 }
 
 const App = {
