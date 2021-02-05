@@ -17,47 +17,47 @@ const Modal = {
     }
 }
 
-const transactions = [
-  {
-    id: 1,
-    description: 'Luz',
-    amount: -50000,
-    date: '23/01/2021'
-  },
-  {
-    id: 2,
-    description: 'Internet',
-    amount: 500000,
-    date: '23/01/2021'
-  },
-  {
-    id: 3,
-    description: 'Website',
-    amount: -20000,
-    date: '23/01/2021'
-  },
-  {
-    id: 4,
-    description: 'Ignite',
-    amount:  20000,
-    date: '23/01/2021'
-  },
-
-]
-
 // Eu preciso somar as entradas
 // Depois eu preciso somar as saídas e
 // Remover das entradas os valores das saídas
 // Assim, eu terei o total
 
 const Transaction = {  // "=" Atribuindo valor
-    all: transactions,
+    all: [
+      {
+        description: 'Luz',
+        amount: -50000,
+        date: '23/01/2021'
+      },
+      {
+        description: 'Internet',
+        amount: 500000,
+        date: '23/01/2021'
+      },
+      {
+        description: 'Website',
+        amount: -20000,
+        date: '23/01/2021'
+      },
+      {
+        description: 'Ignite',
+        amount:  20000,
+        date: '23/01/2021'
+      },
+    
+    ],
+
     add(transaction){
         transactions.all.push(transaction)
 
         App.reload()
     }, 
 
+    remove() {
+        Transaction.all.splice(index, 1)
+
+        App.reload()
+    },
 
     incomes(){
     let income = 0;
@@ -163,6 +163,10 @@ const Utils = {
   }
 }
 
+const Form = {
+  
+}
+
 const App = {
   init(){
 
@@ -171,9 +175,6 @@ const App = {
     })
     
     DOM.updateBalance()
-    
-    
-
   },
   reload(){
     DOM.clearTransactions()
@@ -183,9 +184,4 @@ const App = {
 
 App.init()
 
-Transaction.add({
-  id: 39,
-  description: 'alo',
-  amount: 100,
-  date: "23/02/20"
-})
+Transaction.remove(1)
