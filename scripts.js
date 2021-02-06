@@ -164,11 +164,19 @@ const Utils = {
 }
 
 const Form = {
-  formatData(){
+  description: document.querySelector('input#description'),
+  amount: document.querySelector('input#amount'),
+  date: document.querySelector('input#date'),
 
+  getValues(){
+    return {
+      description: Form.description.value,
+      amount: Form.amount.value,
+      date: Form.date.value
+    }
   },
   validateFields(){
-
+    
   },
   submt(event){
     event.preventDefault()
