@@ -101,12 +101,13 @@ const DOM = {
 
   addTransaction(transaction, index){
     const tr = document.createElement('tr') // Criando o elemento "tr" do html mesmo!
-    tr.innerHTML = DOM.innerHTMLTransaction(transaction)
+    tr.innerHTML = DOM.innerHTMLTransaction(transaction, index)
+    tr.dataset.index = index;
 
     DOM.transactionsContainer.appendChild(tr)
   },
 
-  innerHTMLTransaction(transaction){
+  innerHTMLTransaction(transaction, index){
     const CSSclass = transaction.amount > 0 ? "income" : "expense" // "?" = 'então' - ":" = 'se não'
 
     const amount = Utils.formatCurrency(transaction.amount)
@@ -114,11 +115,11 @@ const DOM = {
     // Montando o html
     const html = `    
       
-        <td class="description">${transaction.description}</td>
-        <td class="${CSSclass}">${amount}</td>
-        <td class="date">${transaction.date}</td>
+        <td class= "description">${transaction.description}</td>
+        <td class= "${CSSclass}">${amount}</td>
+        <td class= "date">${transaction.date}</td>
         <td>
-          <img src="svg/minus.svg" alt="Remover transação" />
+          <img onclick="Transaction.remove(${index})" src="svg/minus.svg" alt="Remover transação" />
         </td>
      
     `
@@ -147,13 +148,14 @@ const DOM = {
 
 const Utils = {
   formatAmount(value){
-    value= Number(value)*100
+    value= Number(value.replace(/\,\./g, "")) * 100
 
     return value
   },
 
   formatDate(date){
-    const splittedDate = date.split("")
+    const splittedDate = date.split("-")
+    return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
   },
 
   formatCurrency(value){
@@ -178,7 +180,7 @@ const Form = {
   amount: document.querySelector('input#amount'),
   date: document.querySelector('input#date'),
 
-  getValues(){
+  getValues() {
     return {
       description: Form.description.value,
       amount: Form.amount.value,
@@ -187,7 +189,7 @@ const Form = {
   },
 
   validateFields(){
-    const { description, amount , date } = Form.getValues()
+    const { description, amount, date } = Form.getValues()
 
     if ( 
           description.trim() === "" || 
@@ -203,24 +205,48 @@ const Form = {
     amount = Utils.formatAmount(amount)
 
     date = Utils.formatDate(date)
+
+    return {
+      description,
+      amount,
+      date
+    }
   },
 
-  submt(event){
+  clearFields(){
+    Form.description.value = ""
+    Form.amount.value = ""
+    Form.date.value = ""
+  },
+  submit(event){
     event.preventDefault()
 
     try {
     // verificar se todas as informações foram preenchidas
     Form.validateFields()
     // formatar os dados para salvar
-    Form.formatData()
+    const transaction = Form.formatValues()
     // salvar 
+    Transaction.add(transaction)
     // apagar os dados do formulario 
+    Form.clearFields()
     // modal feche
+    Modal.close()
     // atualizar a aplicação
+   // App.reload() - Ja possui no add(transaction)
+
     } catch (error){
       alert(error.message)
-    }
+    } 
+  }
+}
 
+const Storage = {
+  get (){
+
+  },
+
+  set(transaction) {
     
   }
 }
@@ -228,11 +254,10 @@ const Form = {
 const App = {
   init(){
 
-    Transaction.all.forEach(transaction => {
-      DOM.addTransaction(transaction)
-    })
+    Transaction.all.forEach(DOM.addTransaction)
     
     DOM.updateBalance()
+
   },
   reload(){
     DOM.clearTransactions()
@@ -241,5 +266,3 @@ const App = {
 }
 
 App.init()
-
-Transaction.remove(1)
