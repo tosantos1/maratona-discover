@@ -5,7 +5,7 @@ const Modal = {
         document
           .querySelector('.modal-overlay')
           .classList
-          .add('active');
+          .add('active')
     },
     close(){
         //Fechar o modal 
@@ -13,8 +13,18 @@ const Modal = {
         document
           .querySelector('.modal-overlay')
           .classList
-          .remove('active');
+          .remove('active')
     }
+}
+
+const Storage = {
+  get (){
+    return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
+  },
+
+  set(transactions) {
+    localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions))
+  }
 }
 
 // Eu preciso somar as entradas
@@ -23,37 +33,15 @@ const Modal = {
 // Assim, eu terei o total
 
 const Transaction = {  // "=" Atribuindo valor
-    all: [
-      {
-        description: 'Luz',
-        amount: -50000,
-        date: '23/01/2021'
-      },
-      {
-        description: 'Internet',
-        amount: 500000,
-        date: '23/01/2021'
-      },
-      {
-        description: 'Website',
-        amount: -20000,
-        date: '23/01/2021'
-      },
-      {
-        description: 'Ignite',
-        amount:  20000,
-        date: '23/01/2021'
-      },
-    
-    ],
+    all: Storage.get(),
 
     add(transaction){
-        transactions.all.push(transaction)
+        Transaction.all.push(transaction)
 
         App.reload()
     }, 
 
-    remove() {
+    remove(index) {
         Transaction.all.splice(index, 1)
 
         App.reload()
@@ -63,12 +51,13 @@ const Transaction = {  // "=" Atribuindo valor
     let income = 0;
       // pegar todas as transacoes
       // para cada transacao,
-    transactions.all.forEach(transaction => {
+    Transaction.all.forEach(transaction => {
       // se ela for maior que zero
       if (transaction.amount > 0){
         // somar a uma variavel e retornar a variavel
       income = income + transaction.amount;
-    }})
+    }
+  })
      return income;
     },
 
@@ -76,7 +65,7 @@ const Transaction = {  // "=" Atribuindo valor
     let expense = 0;
       // pegar todas as transacoes
       // para cada transacao,
-    transactions.all.forEach(transaction => {
+    Transaction.all.forEach(transaction => {
       // se ela for menor que zero
       if (transaction.amount < 0){
         // somar a uma variavel e retornar a variavel
@@ -102,7 +91,7 @@ const DOM = {
   addTransaction(transaction, index){
     const tr = document.createElement('tr') // Criando o elemento "tr" do html mesmo!
     tr.innerHTML = DOM.innerHTMLTransaction(transaction, index)
-    tr.dataset.index = index;
+    tr.dataset.index = index
 
     DOM.transactionsContainer.appendChild(tr)
   },
@@ -141,14 +130,11 @@ const DOM = {
   clearTransactions(){
     DOM.transactionsContainer.innerHTML = ""
   }
-
-
-
 }
 
 const Utils = {
   formatAmount(value){
-    value= Number(value.replace(/\,\./g, "")) * 100
+    value = Number(value.replace(/\,\./g, "")) * 100
 
     return value
   },
@@ -218,6 +204,7 @@ const Form = {
     Form.amount.value = ""
     Form.date.value = ""
   },
+
   submit(event){
     event.preventDefault()
 
@@ -241,22 +228,14 @@ const Form = {
   }
 }
 
-const Storage = {
-  get (){
-
-  },
-
-  set(transaction) {
-    
-  }
-}
-
 const App = {
   init(){
 
     Transaction.all.forEach(DOM.addTransaction)
     
     DOM.updateBalance()
+
+    Storage.set(Transaction.all)
 
   },
   reload(){
