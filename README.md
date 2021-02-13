@@ -42,8 +42,8 @@
 <h2>🖼️ Imagens do Projeto</h2>
 
 <div align="center" >
-  <img src="svg/cover.png" width="400px" height="400px"/>
-  <img src="svg/Modal.png" width="400px" height="400px"/>
+  <img src="svg/cover.png" width="568px" height="343px"/>
+  <img src="svg/Modal.png" width="568px" height="343px"/>
 </div>
 
 </br>
