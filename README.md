@@ -1,6 +1,6 @@
-# Maratona-discover
+# Maratona Discover
  
-<h1> Projeto realizado por <a href="https://github.com/rocketseat-education">@Rocketseat</a></h1>
+<h1> Projeto realizado por <a href="https://github.com/maykbrito/maykbrito/commits?author=maykbrito">@maykbrito</a></h1>
 
 <div>
   <img src="svg/cover.png" width="8000px"/>
@@ -21,7 +21,7 @@
 
 <h2>🚀 Sobre o Projeto</h2>
 
-<p> Nessa edição, eu aprendi construir uma aplicação financeira onde treinei habilidades com ferramentas como JavaScript, CSS, HTML, e durante o desenvolvimento aprendi as melhores práticas sobre as linguagens, além de conceitos importantes que contribuiu para construir uma base sólida em programação.</p>
+<p> Nessa edição, eu aprendi construir uma aplicação financeira onde pratiquei habilidades com ferramentas como JavaScript, CSS, HTML, e durante o desenvolvimento aprendi as melhores práticas sobre as linguagens, além de conceitos importantes que contribuiu para construir uma base sólida em programação.</p>
 
 ---
 
@@ -42,7 +42,8 @@
 <h2>🖼️ Imagens do Projeto</h2>
 
 <div align="center" >
-  <img src="img/COVER.png" width="80000px"/>
+  <img src="img/cover.png" width="400px"/>
+  <img src="img/Modal.png" width="400px"/>
 </div>
 
 </br>
