@@ -1,6 +1,6 @@
 # Maratona Discover
  
-<h1> Projeto realizado por <a href="https://github.com/maykbrito/maykbrito/commits?author=maykbrito">@maykbrito</a></h1>
+<h1> Projeto realizado por <a href="https://github.com/maykbrito">@maykbrito</a></h1>
 
 <div>
   <img src="svg/cover.png" width="8000px"/>
@@ -42,8 +42,8 @@
 <h2>🖼️ Imagens do Projeto</h2>
 
 <div align="center" >
-  <img src="img/cover.png" width="400px"/>
-  <img src="img/Modal.png" width="400px"/>
+  <img src="svg/cover.png" width="400px"/>
+  <img src="svg/Modal.png" width="400px"/>
 </div>
 
 </br>
