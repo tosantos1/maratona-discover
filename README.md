@@ -19,7 +19,7 @@
 
 <!-- ************************************* Sobre o projeto ********************************************* -->
 
-<h2>🚀 Sobre o Projeto</h2>
+<h2>🔥 Sobre o Projeto</h2>
 
 <p> Nessa edição, eu aprendi construir uma aplicação financeira onde pratiquei habilidades com ferramentas como JavaScript, CSS, HTML, e durante o desenvolvimento aprendi as melhores práticas sobre as linguagens, além de conceitos importantes que contribuiu para construir uma base sólida em programação.</p>
 
@@ -42,8 +42,8 @@
 <h2>🖼️ Imagens do Projeto</h2>
 
 <div align="center" >
-  <img src="svg/cover.png" width="400px"/>
-  <img src="svg/Modal.png" width="400px"/>
+  <img src="svg/cover.png" width="400px" height="400px"/>
+  <img src="svg/Modal.png" width="400px" height="400px"/>
 </div>
 
 </br>
