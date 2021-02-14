@@ -54,3 +54,6 @@
 * [Mayk Brito](https://www.youtube.com/watch?v=f13z6eFJEQg) - Maratona Discover - Aula 2
 * [Mayk Brito](https://www.youtube.com/watch?v=41VftS_pjnI) - Maratona Discover - Aula 3
 * [Mayk Brito](https://www.youtube.com/watch?v=Ia473nPz1L4&t) - Maratona Discover - Aula 4
+
+---
+⌨️ com ❤️ por [Tiago Oliveira](https://github.com/tosantos1) 😊
