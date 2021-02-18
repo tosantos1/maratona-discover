@@ -86,7 +86,7 @@ const Transaction = {  // "=" Atribuindo valor
 // Substituir os dados do HTML com os dados do JS
 
 const DOM = {
-  transactionsContainer: document.querySelector('#data-table tbody'),
+  transactionsContainer: document.querySelector('#totalDisplay'),
 
   addTransaction(transaction, index){
     const tr = document.createElement('tr') // Criando o elemento "tr" do html mesmo!
