@@ -1,7 +1,7 @@
 # Maratona Discover
  
 <h1> Projeto realizado por <a href="https://github.com/maykbrito">@maykbrito</a></h1>
-<p><a href="https://mdiscover.netlify.app/">Aplicação</a></p>
+<h3><a href="https://mdiscover.netlify.app/">Visite o site</a></h3>
 
 <div>
   <img src="svg/cover.png" width="8000px"/>
