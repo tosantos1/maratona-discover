@@ -6,7 +6,7 @@
 <div>
   <p>Aplicação oficial</p>
   <img src="svg/cover.png" width="8000px"/>
-  <p>Aplicação com mudanças feito por: <a href="https://github.com/tosantos1)">Tiago Oliveira</a></p> 
+  <p>Aplicação com mudanças feito por: <a href="https://mdiscover.netlify.app/">Tiago Oliveira</a></p> 
   <img src="svg/md.jpeg" width="8000px"/>
 </div>
 
