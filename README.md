@@ -4,6 +4,7 @@
 <h3><a href="https://mdiscover.netlify.app/">Visite o site</a></h3>
 
 <div>
+  <img src="svg/mdiscover.jpeg" width="8000px"/>
   <img src="svg/cover.png" width="8000px"/>
 </div>
 
