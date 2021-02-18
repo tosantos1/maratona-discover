@@ -30,7 +30,7 @@ const Storage = {
 // Eu preciso somar as entradas
 // Depois eu preciso somar as saídas e
 // Remover das entradas os valores das saídas
-// Assim, eu terei o total
+// Assim, eu terei o TOTAL
 
 const Transaction = {  // "=" Atribuindo valor
     all: Storage.get(),
@@ -108,7 +108,7 @@ const DOM = {
         <td class= "${CSSclass}">${amount}</td>
         <td class= "date">${transaction.date}</td>
         <td>
-          <img onclick="Transaction.remove(${index})" src="svg/minus.svg" alt="Remover transação" />
+          <img onclick="Transaction.remove(${index})" src="/svg/minus.svg" alt="Remover transação" />
         </td>
      
     `
