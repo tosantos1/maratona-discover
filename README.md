@@ -4,8 +4,10 @@
 <h3><a href="https://mdiscover.netlify.app/">Visite o site</a></h3>
 
 <div>
-  <img src="svg/mdiscover.jpeg" width="8000px"/>
+  <p>Aplicação oficial</p>
   <img src="svg/cover.png" width="8000px"/>
+  <p>Aplicação com mudanças feito por</p> [Tiago Oliveira](https://github.com/tosantos1)
+  <img src="svg/mdiscover.jpeg" width="8000px"/>
 </div>
 
 <!-- ************************************* Baadges ********************************************* -->
